@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Комментарии</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="blog" class="blog cont-100vh w3-white">
+        <h1>Кто изобрел веб-компоненты?</h1>
+        <div id="post">
+          
+  
+          В 2011 году веб-компоненты были впервые представлены Алексом Расселом на конференции Fronteers.
+          Компания Google в 2013 году выпустила Polymer, библиотеку на основе веб-компонентов. 
+          Polymer — это каноническая реализация Material Design для пользовательских интерфейсов веб-приложений.
+        </div>
+        <comment-div></comment-div>
+      </div>
+    </div>
+
+    <template id="commentTemplate">
+      <style>
+        .comment {
+          padding-top: 1px;
+        }
+        .dive-comments {
+          margin-left: 40px;
+          margin-top: 10px;
+        }
+      </style>
+      <div class="comment">
+        <p><slot></slot></p>
+        <button class="like-btn">
+          Понравилось <span class="like-count">0</span>
+        </button>
+        <button class="reply-btn">Комментировать</button>
+        <button class="delete-btn">Удалить</button>
+        <div class="dive-comments"></div>
+      </div>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
